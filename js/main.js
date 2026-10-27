@@ -1,5 +1,62 @@
 "use strict";
 
+const themeToggle = document.querySelector(".theme-toggle");
+const themeIcon = themeToggle?.querySelector(".theme-toggle__icon");
+const themeLabel = themeToggle?.querySelector(".sr-only");
+const themeMeta = document.querySelector('meta[name="theme-color"]');
+const themeStorageKey = "na-manzo-theme";
+
+function readSavedTheme() {
+  try {
+    const savedTheme = localStorage.getItem(themeStorageKey);
+    return savedTheme === "light" || savedTheme === "dark" ? savedTheme : null;
+  } catch (error) {
+    console.warn("Unable to read the saved color theme.", error);
+    return null;
+  }
+}
+
+function saveTheme(theme) {
+  try {
+    localStorage.setItem(themeStorageKey, theme);
+  } catch (error) {
+    console.warn("Unable to save the selected color theme.", error);
+  }
+}
+
+function applyTheme(theme) {
+  const isDark = theme === "dark";
+  document.documentElement.dataset.theme = theme;
+
+  if (themeToggle && themeIcon && themeLabel) {
+    const label = isDark ? "Switch to light mode" : "Switch to dark mode";
+    themeToggle.setAttribute("aria-label", label);
+    themeToggle.setAttribute("aria-pressed", String(isDark));
+    themeToggle.title = label;
+    themeIcon.textContent = isDark ? "☀" : "☾";
+    themeLabel.textContent = label;
+  }
+
+  if (themeMeta) {
+    themeMeta.content = getComputedStyle(document.documentElement)
+      .getPropertyValue("--color-theme-color")
+      .trim();
+  }
+}
+
+const savedTheme = readSavedTheme();
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+applyTheme(savedTheme || (prefersDark ? "dark" : "light"));
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const nextTheme =
+      document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    applyTheme(nextTheme);
+    saveTheme(nextTheme);
+  });
+}
+
 const menuToggle = document.querySelector(".menu-toggle");
 const primaryNav = document.querySelector("#primary-nav");
 
