@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="720" viewBox="0 0 960 720" fill="none">
+  <defs>
+    <linearGradient id="wall" x1="480" y1="0" x2="480" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EDF5FC"/>
+      <stop offset="1" stop-color="#D6E4F0"/>
+    </linearGradient>
+    <linearGradient id="counter" x1="480" y1="490" x2="480" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9FCFF"/>
+      <stop offset="1" stop-color="#CFDCE8"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#163A5C"/>
+      <stop offset="1" stop-color="#2878E8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#17344D" flood-opacity=".16"/>
+    </filter>
+    <g id="computer">
+      <rect x="0" y="0" width="142" height="106" rx="9" fill="#24394D"/>
+      <rect x="8" y="8" width="126" height="84" rx="4" fill="url(#screen)"/>
+      <path d="M17 70c17-22 30-10 43-27s25-15 39-2 19 6 29-8v48H17V70Z" fill="#17B9A6" fill-opacity=".72"/>
+      <path d="M61 106h20v17H61z" fill="#526A7F"/>
+      <path d="M42 126h59l12 8H30l12-8Z" fill="#879BAE"/>
+      <rect x="5" y="138" width="132" height="37" rx="5" fill="#DDE6EE"/>
+      <path d="M15 148h112M15 157h112M15 166h112M28 144v27m14-27v27m14-27v27m14-27v27m14-27v27m14-27v27m14-27v27" stroke="#9EAFBE" stroke-width="2"/>
+    </g>
+    <g id="printer">
+      <rect x="4" y="0" width="112" height="44" rx="7" fill="#F9FBFD" stroke="#AABBC9" stroke-width="3"/>
+      <rect y="34" width="120" height="75" rx="9" fill="#D9E3EC" stroke="#91A5B6" stroke-width="3"/>
+      <rect x="14" y="48" width="92" height="25" rx="4" fill="#233A50"/>
+      <rect x="21" y="53" width="68" height="14" rx="2" fill="#E8F3FA"/>
+      <circle cx="98" cy="60" r="4" fill="#17B9A6"/>
+      <path d="M18 86h84v30H18z" fill="#fff" stroke="#AABBC9" stroke-width="2"/>
+      <path d="M29 96h62m-62 7h47" stroke="#CAD5DE" stroke-width="2"/>
+    </g>
+    <g id="copier">
+      <rect x="8" y="0" width="126" height="62" rx="7" fill="#F9FBFD" stroke="#AABBC9" stroke-width="3"/>
+      <path d="M24 13h92v36H24z" fill="#E4ECF3"/>
+      <rect x="0" y="51" width="142" height="119" rx="10" fill="#CFDBE5" stroke="#91A5B6" stroke-width="3"/>
+      <rect x="14" y="66" width="114" height="24" rx="4" fill="#233A50"/>
+      <rect x="21" y="72" width="67" height="12" rx="2" fill="#E8F3FA"/>
+      <circle cx="111" cy="78" r="4" fill="#17B9A6"/>
+      <path d="M22 105h98v39H22z" fill="#F9FBFD" stroke="#AABBC9" stroke-width="2"/>
+      <path d="M32 117h78m-78 9h55" stroke="#C1CED9" stroke-width="2"/>
+      <rect x="20" y="170" width="18" height="22" rx="3" fill="#667C8E"/>
+      <rect x="104" y="170" width="18" height="22" rx="3" fill="#667C8E"/>
+    </g>
+  </defs>
+
+  <rect width="960" height="720" fill="url(#wall)"/>
+  <path d="M0 478h960v242H0z" fill="#C5D5E2"/>
+  <path d="M0 493h960" stroke="#A8BBCB" stroke-width="8"/>
+  <path d="M0 0h960v28H0z" fill="#fff" fill-opacity=".55"/>
+
+  <g opacity=".95">
+    <rect x="60" y="97" width="840" height="16" rx="8" fill="#AABCCB"/>
+    <rect x="60" y="270" width="840" height="16" rx="8" fill="#AABCCB"/>
+    <rect x="60" y="449" width="840" height="15" rx="7" fill="#AABCCB"/>
+    <path d="M82 112v336m796-336v336" stroke="#8DA3B5" stroke-width="12"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <g transform="translate(95 126) scale(.8)"><use href="#computer"/></g>
+    <g transform="translate(246 143) scale(.76)"><use href="#printer"/></g>
+    <g transform="translate(394 128) scale(.78)"><use href="#copier"/></g>
+    <g transform="translate(582 143) scale(.76)"><use href="#printer"/></g>
+    <g transform="translate(738 126) scale(.8)"><use href="#computer"/></g>
+
+    <g transform="translate(100 298) scale(.72)"><use href="#printer"/></g>
+    <g transform="translate(253 295) scale(.78)"><use href="#copier"/></g>
+    <g transform="translate(434 314) scale(.74)"><use href="#printer"/></g>
+    <g transform="translate(580 297) scale(.78)"><use href="#copier"/></g>
+    <g transform="translate(776 300) scale(.72)"><use href="#printer"/></g>
+  </g>
+
+  <path d="M0 496h960v224H0z" fill="url(#counter)"/>
+  <path d="M0 496h960" stroke="#fff" stroke-width="8"/>
+  <g filter="url(#shadow)">
+    <g transform="translate(115 375) scale(.83)"><use href="#computer"/></g>
+    <g transform="translate(335 386) scale(.77)"><use href="#computer"/></g>
+    <g transform="translate(566 379) scale(.82)"><use href="#computer"/></g>
+    <g transform="translate(788 386) scale(.77)"><use href="#computer"/></g>
+  </g>
+  <path d="M0 692h960v28H0z" fill="#B5C6D4"/>
+  <path d="M153 552h654" stroke="#B7C7D4" stroke-width="4" stroke-linecap="round"/>
+
+  <g font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="2">
+    <g>
+      <rect x="24" y="24" width="82" height="38" rx="12" fill="#071B33" fill-opacity=".9"/>
+      <text x="65" y="49" fill="#fff" text-anchor="middle">NMCC</text>
+    </g>
+    <g>
+      <rect x="854" y="24" width="82" height="38" rx="12" fill="#071B33" fill-opacity=".9"/>
+      <text x="895" y="49" fill="#fff" text-anchor="middle">NMCC</text>
+    </g>
+    <g>
+      <rect x="24" y="658" width="82" height="38" rx="12" fill="#071B33" fill-opacity=".9"/>
+      <text x="65" y="683" fill="#fff" text-anchor="middle">NMCC</text>
+    </g>
+    <g>
+      <rect x="854" y="658" width="82" height="38" rx="12" fill="#071B33" fill-opacity=".9"/>
+      <text x="895" y="683" fill="#fff" text-anchor="middle">NMCC</text>
+    </g>
+  </g>
+</svg>
