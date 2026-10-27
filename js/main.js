@@ -235,36 +235,148 @@ const initThemeToggle = () => {
 };
 
 /**
- * Updates the copyright year and handles the demo quote form.
+ * Sets the footer copyright year to the current year.
  */
-const initFooterYearAndQuoteForm = () => {
+const initFooterYear = () => {
   const currentYear = document.querySelector("#current-year");
   if (currentYear) {
     currentYear.textContent = String(new Date().getFullYear());
   }
+};
 
-  const quoteForm = document.querySelector("#quote-form");
+/**
+ * Validates signups, prevents duplicate emails, and stores successful entries.
+ */
+const initSignupForm = () => {
+  const signupForm = document.querySelector("#signup-form");
   const formFeedback = document.querySelector("#form-feedback");
 
-  if (!quoteForm || !formFeedback) {
+  if (!signupForm || !formFeedback) {
     return;
   }
 
-  quoteForm.addEventListener("submit", (event) => {
+  const nameInput = signupForm.querySelector("#full-name");
+  const emailInput = signupForm.querySelector("#email");
+  const planInput = signupForm.querySelector("#service");
+  const termsInput = signupForm.querySelector("#terms");
+  const signupFields = [
+    {
+      input: nameInput,
+      error: signupForm.querySelector("#name-error"),
+      validate: () => nameInput.value.trim().length >= 2
+        ? ""
+        : "Enter a name with at least 2 characters.",
+    },
+    {
+      input: emailInput,
+      error: signupForm.querySelector("#email-error"),
+      validate: () => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailInput.value.trim())
+        ? ""
+        : "Enter a valid email address.",
+    },
+    {
+      input: planInput,
+      error: signupForm.querySelector("#plan-error"),
+      validate: () => planInput.value
+        ? ""
+        : "Choose a plan or service.",
+    },
+    {
+      input: termsInput,
+      error: signupForm.querySelector("#terms-error"),
+      validate: () => termsInput.checked
+        ? ""
+        : "Please agree to be contacted.",
+    },
+  ];
+
+  if (signupFields.some((field) => !field.input || !field.error)) {
+    console.error("The signup form is missing a required field or error message.");
+    return;
+  }
+
+  const setFieldError = (field, message) => {
+    field.error.textContent = message;
+    field.input.setAttribute("aria-invalid", String(Boolean(message)));
+  };
+
+  signupFields.forEach((field) => {
+    const clearIfValid = () => {
+      if (field.input.getAttribute("aria-invalid") === "true") {
+        setFieldError(field, field.validate());
+      }
+      formFeedback.textContent = "";
+      formFeedback.classList.remove("is-error");
+    };
+
+    field.input.addEventListener("input", clearIfValid);
+    field.input.addEventListener("change", clearIfValid);
+  });
+
+  signupForm.addEventListener("submit", (event) => {
     event.preventDefault();
     formFeedback.classList.remove("is-error");
+    formFeedback.textContent = "";
 
-    if (!quoteForm.reportValidity()) {
-      formFeedback.textContent =
-        "Please complete all required fields with valid information.";
+    let isValid = true;
+    signupFields.forEach((field) => {
+      const error = field.validate();
+      setFieldError(field, error);
+      if (error) {
+        isValid = false;
+      }
+    });
+
+    if (!isValid) {
+      return;
+    }
+
+    const email = emailInput.value.trim();
+    let signups;
+
+    try {
+      const savedSignups = localStorage.getItem("signups");
+      signups = savedSignups ? JSON.parse(savedSignups) : [];
+      if (!Array.isArray(signups)) {
+        throw new TypeError('The "signups" localStorage entry must be an array.');
+      }
+    } catch (error) {
+      console.error("Unable to read signup records from localStorage.", error);
+      formFeedback.textContent = "We couldn't check existing signups. Please try again.";
       formFeedback.classList.add("is-error");
       return;
     }
 
-    const formData = new FormData(quoteForm);
-    const fullName = String(formData.get("fullName")).trim();
-    formFeedback.textContent =
-      `Thanks, ${fullName}. Your details are valid. This demo form does not send enquiries, so please email yusufmahadi54@gmail.com or call 0813 192 3393 to complete your request.`;
+    const emailExists = signups.some(
+      (signup) => typeof signup?.email === "string"
+        && signup.email.trim().toLowerCase() === email.toLowerCase(),
+    );
+
+    if (emailExists) {
+      formFeedback.textContent = "You've already signed up";
+      formFeedback.classList.add("is-error");
+      return;
+    }
+
+    const signup = {
+      name: nameInput.value.trim(),
+      email,
+      plan: planInput.value,
+      createdAt: new Date().toISOString(),
+    };
+
+    try {
+      localStorage.setItem("signups", JSON.stringify([...signups, signup]));
+    } catch (error) {
+      console.error("Unable to save signup to localStorage.", error);
+      formFeedback.textContent = "We couldn't save your signup. Please try again.";
+      formFeedback.classList.add("is-error");
+      return;
+    }
+
+    signupForm.reset();
+    signupFields.forEach((field) => setFieldError(field, ""));
+    formFeedback.textContent = `Thanks, ${signup.name}! Your signup was successful.`;
   });
 };
 
@@ -277,7 +389,8 @@ const init = () => {
   initAccordion();
   initPricingToggle();
   initHeaderShadow();
-  initFooterYearAndQuoteForm();
+  initFooterYear();
+  initSignupForm();
 };
 
 document.addEventListener("DOMContentLoaded", init, { once: true });
