@@ -59,29 +59,110 @@
               <p>Thoughtful service. Reliable results.<br><strong>Made for Nigerian businesses.</strong></p>
             </div>
           </div>
-          <div class="hero-art" role="img" aria-label="Illustration of creative print and digital work">
-            <div class="art-orbit orbit-one"></div>
-            <div class="art-orbit orbit-two"></div>
-            <div class="art-spark spark-one">✦</div>
-            <div class="art-spark spark-two">✳</div>
-            <div class="art-card art-card-back">
-              <div class="mock-browser"><span></span><span></span><span></span></div>
-              <div class="mock-web">
-                <div class="mock-web-nav"><b>YOUR BRAND</b><i></i><i></i><i></i></div>
-                <div class="mock-web-copy"><span></span><span></span><span></span></div>
-                <div class="mock-web-image"></div>
-              </div>
-            </div>
-            <div class="art-card art-card-front">
-              <div class="print-sheet">
-                <span class="sheet-label">MADE TO STAND OUT</span>
-                <span class="sheet-shape shape-a"></span>
-                <span class="sheet-shape shape-b"></span>
-                <span class="sheet-title">YOUR<br>BIG IDEA</span>
-                <span class="sheet-foot">DESIGN · PRINT · GROW</span>
-              </div>
-            </div>
-            <div class="art-badge"><span aria-hidden="true">✦</span> Ideas into impact</div>
+          <div class="hero-art">
+            <svg class="hero-art__scene" viewBox="0 0 680 500" role="img" aria-labelledby="workspace-title workspace-description" xmlns="http://www.w3.org/2000/svg">
+              <title id="workspace-title">Organized computer and print workspace</title>
+              <desc id="workspace-description">A bright, orderly computer center with rows of desktop computers, printers, and a multifunction photocopier.</desc>
+              <defs>
+                <linearGradient id="workspace-wall" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#173a5d"/>
+                  <stop offset="1" stop-color="#0b2540"/>
+                </linearGradient>
+                <linearGradient id="screen-blue" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#9ed7ff"/>
+                  <stop offset="1" stop-color="#3684d5"/>
+                </linearGradient>
+                <linearGradient id="machine-white" x1="0" x2="0.9" y1="0" y2="1">
+                  <stop offset="0" stop-color="#fff"/>
+                  <stop offset="1" stop-color="#cbd8e5"/>
+                </linearGradient>
+                <linearGradient id="machine-side" x1="0" x2="1">
+                  <stop stop-color="#8fa4b8"/>
+                  <stop offset="1" stop-color="#d9e3ec"/>
+                </linearGradient>
+                <filter id="workspace-shadow" x="-30%" y="-30%" width="160%" height="180%">
+                  <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#020b15" flood-opacity=".28"/>
+                </filter>
+                <g id="desktop-computer">
+                  <rect x="0" y="0" width="104" height="72" rx="7" fill="#192b3d" stroke="#7189a0" stroke-width="2"/>
+                  <rect x="6" y="6" width="92" height="58" rx="3" fill="url(#screen-blue)"/>
+                  <rect x="13" y="13" width="40" height="5" rx="2.5" fill="#f3fbff" opacity=".92"/>
+                  <rect x="13" y="23" width="28" height="3" rx="1.5" fill="#d8efff" opacity=".8"/>
+                  <rect x="13" y="31" width="34" height="22" rx="3" fill="#f3f8fc" opacity=".9"/>
+                  <path d="M56 51h34M56 44h27M56 37h30" stroke="#e8f5ff" stroke-linecap="round" stroke-width="3" opacity=".9"/>
+                  <path d="M43 72v12m-16 4h32l-4-4H31z" fill="#718499"/>
+                  <path d="M17 91h71l8 7H9z" fill="#d5e0e9"/>
+                  <path d="M26 94h50" stroke="#8195a8" stroke-linecap="round" stroke-width="2"/>
+                  <circle cx="85" cy="68" r="1.8" fill="#59d3c4"/>
+                </g>
+                <g id="desktop-printer">
+                  <path d="M8 16h90l8 10v52H8z" fill="url(#machine-white)"/>
+                  <path d="M98 16l8 10v52h-8z" fill="url(#machine-side)"/>
+                  <rect x="19" y="4" width="67" height="29" rx="3" fill="#f8fbfd" stroke="#a9bac9" stroke-width="2"/>
+                  <path d="M28 12h49m-49 6h42" stroke="#c5d2dd" stroke-linecap="round" stroke-width="2"/>
+                  <rect x="17" y="39" width="75" height="18" rx="3" fill="#253a4e"/>
+                  <rect x="23" y="44" width="56" height="3" rx="1.5" fill="#d5e5f2"/>
+                  <circle cx="86" cy="47" r="3" fill="#35c7ad"/>
+                  <rect x="24" y="63" width="62" height="15" rx="2" fill="#fdfefe"/>
+                  <path d="M34 69h41" stroke="#a6b6c4" stroke-width="2"/>
+                </g>
+                <g id="copier">
+                  <path d="M17 89h156v126H17z" fill="url(#machine-white)"/>
+                  <path d="M153 89h20v126h-20z" fill="url(#machine-side)"/>
+                  <path d="M31 33h112l18 57H20z" fill="#dbe5ed"/>
+                  <path d="M39 39h94l12 42H30z" fill="#263a4d"/>
+                  <rect x="49" y="47" width="52" height="27" rx="2" fill="url(#screen-blue)"/>
+                  <path d="M56 54h36m-36 6h24" stroke="#eef8ff" stroke-linecap="round" stroke-width="2"/>
+                  <circle cx="122" cy="55" r="3" fill="#42d0b3"/>
+                  <rect x="30" y="104" width="116" height="16" rx="3" fill="#263a4d"/>
+                  <path d="M40 110h74m-74 5h63" stroke="#a8bac9" stroke-width="2"/>
+                  <rect x="36" y="133" width="104" height="66" rx="4" fill="#b9c9d6"/>
+                  <path d="M45 144h86m-86 7h86m-86 7h86" stroke="#f6f9fb" stroke-width="3"/>
+                  <path d="M49 172h79v22H49z" fill="#edf2f6"/>
+                  <path d="M57 178h62m-62 6h51" stroke="#bbc8d3" stroke-width="2"/>
+                  <path d="M29 215v30m114-30v30" stroke="#718499" stroke-linecap="round" stroke-width="8"/>
+                  <path d="M19 246h151" stroke="#718499" stroke-linecap="round" stroke-width="8"/>
+                </g>
+              </defs>
+
+              <rect x="20" y="18" width="640" height="458" rx="28" fill="url(#workspace-wall)" stroke="#46627d" stroke-opacity=".5"/>
+              <circle cx="559" cy="92" r="82" fill="#2878e8" opacity=".1"/>
+              <circle cx="117" cy="76" r="54" fill="#17b9a6" opacity=".08"/>
+
+              <g opacity=".8">
+                <path d="M52 62h214v123H52z" fill="#112d49" stroke="#49637c" stroke-width="2"/>
+                <path d="M52 121h214m-214 63h214" stroke="#668099" stroke-width="5"/>
+                <path d="M414 62h214v123H414z" fill="#112d49" stroke="#49637c" stroke-width="2"/>
+                <path d="M414 121h214m-214 63h214" stroke="#668099" stroke-width="5"/>
+              </g>
+
+              <g filter="url(#workspace-shadow)">
+                <use href="#desktop-computer" x="64" y="70" transform="translate(0 0) scale(.67)"/>
+                <use href="#desktop-computer" x="162" y="70" transform="translate(0 0) scale(.67)"/>
+                <use href="#desktop-printer" x="360" y="104" transform="translate(0 0) scale(.55)"/>
+                <use href="#desktop-computer" x="620" y="70" transform="translate(0 0) scale(.67)"/>
+                <use href="#desktop-computer" x="750" y="70" transform="translate(0 0) scale(.67)"/>
+              </g>
+
+              <path d="M42 228h596l-26 24H68z" fill="#d4e0ea"/>
+              <path d="M68 252h544v29H68z" fill="#8399ad"/>
+              <path d="M68 281h544l-22 146H90z" fill="#1a344f"/>
+              <path d="M90 427h500" stroke="#58718a" stroke-width="5"/>
+              <path d="M110 280v142m458-142v142" stroke="#748ba0" stroke-width="12"/>
+
+              <g filter="url(#workspace-shadow)">
+                <use href="#desktop-printer" x="60" y="345" transform="translate(0 0) scale(.55)"/>
+                <use href="#desktop-computer" x="105" y="177"/>
+                <use href="#desktop-computer" x="220" y="177"/>
+                <use href="#desktop-computer" x="335" y="177"/>
+                <use href="#copier" x="580" y="244" transform="translate(0 0) scale(.8)"/>
+              </g>
+
+              <rect x="45" y="447" width="590" height="2" rx="1" fill="#9bb0c3" opacity=".35"/>
+              <circle cx="614" cy="54" r="3" fill="#77d9cc"/>
+              <circle cx="598" cy="54" r="3" fill="#6ea8ff"/>
+              <circle cx="582" cy="54" r="3" fill="#f2c56f"/>
+            </svg>
           </div>
         </div>
         <div class="container hero-bottom">
@@ -163,21 +244,22 @@
             <h2>A great website is <span>within reach.</span></h2>
             <p class="section-intro">Choose a starting point. We’ll shape the details around your goals and budget.</p>
           </div>
-          <div class="billing-preview" aria-label="Billing period preview">
+          <div class="billing-preview">
             <span class="billing-label">Billing options</span>
-            <div class="billing-switch" role="group" aria-label="Choose billing period preview">
+            <div class="billing-switch" role="group" aria-label="Choose billing period">
               <button type="button" class="billing-option is-selected" aria-pressed="true" data-billing="monthly">Monthly</button>
               <button type="button" class="billing-option" aria-pressed="false" data-billing="yearly">Yearly</button>
+              <span class="badge badge--savings billing-savings" hidden>Save 20%</span>
             </div>
-            <span class="billing-note" id="billing-note" aria-live="polite">Preview only — website prices are one-time project estimates.</span>
+            <span class="billing-note" id="billing-note" aria-live="polite">Choose yearly billing to save 20%.</span>
           </div>
           <div class="pricing-grid">
             <article class="card card--pricing">
               <p class="plan-label">A smart start</p>
               <h3>Basic</h3>
               <p class="plan-description">Your essential online presence, done right.</p>
-              <p class="price"><span class="currency">₦</span>100,000</p>
-              <p class="price-caption">one-time project estimate</p>
+              <p class="price" data-monthly="100000" data-yearly="80000"><span class="currency">₦</span><span class="price-amount">100,000</span></p>
+              <p class="price-caption">per month, billed monthly</p>
               <a class="btn btn--outline" href="#contact">Choose Basic <span aria-hidden="true">↗</span></a>
               <p class="includes-label">What’s included</p>
               <ul class="plan-features">
@@ -192,8 +274,8 @@
               <p class="plan-label">For growing brands</p>
               <h3>Pro</h3>
               <p class="plan-description">More room to showcase what makes you different.</p>
-              <p class="price"><span class="currency">₦</span>250,000</p>
-              <p class="price-caption">one-time project estimate</p>
+              <p class="price" data-monthly="250000" data-yearly="200000"><span class="currency">₦</span><span class="price-amount">250,000</span></p>
+              <p class="price-caption">per month, billed monthly</p>
               <a class="btn btn--primary" href="#contact">Choose Pro <span aria-hidden="true">↗</span></a>
               <p class="includes-label">What’s included</p>
               <ul class="plan-features">
@@ -208,8 +290,8 @@
               <p class="plan-label">For ambitious teams</p>
               <h3>Business</h3>
               <p class="plan-description">A flexible digital platform built to scale.</p>
-              <p class="price"><span class="currency">₦</span>450,000<span class="price-plus">+</span></p>
-              <p class="price-caption">one-time project estimate</p>
+              <p class="price" data-monthly="450000" data-yearly="360000"><span class="currency">₦</span><span class="price-amount">450,000</span><span class="price-plus">+</span></p>
+              <p class="price-caption">per month, billed monthly</p>
               <a class="btn btn--outline" href="#contact">Choose Business <span aria-hidden="true">↗</span></a>
               <p class="includes-label">What’s included</p>
               <ul class="plan-features">
@@ -220,7 +302,7 @@
               </ul>
             </article>
           </div>
-          <p class="pricing-disclaimer">Prices are estimates in Nigerian naira. Domain, hosting, and additional features may cost extra. We’ll confirm your final quote before work begins.</p>
+          <p class="pricing-disclaimer">Prices are monthly equivalents in Nigerian naira. Yearly plans are billed annually at 20% off. Domain, hosting, and additional features may cost extra; we’ll confirm your final plan before work begins.</p>
         </div>
       </section>
 
